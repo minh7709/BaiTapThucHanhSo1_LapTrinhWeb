@@ -1,0 +1,125 @@
+/* Header Styles */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--phoneshop-white);
+  z-index: 1000;
+  border-bottom: 1px solid var(--phoneshop-border);
+}
+
+.header-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.phoneshop-logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--phoneshop-blue);
+  letter-spacing: -0.5px;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 32px;
+}
+
+.main-nav a {
+  color: var(--phoneshop-black);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 0;
+  transition: color 0.2s;
+}
+
+.main-nav a:hover {
+  color: var(--phoneshop-blue);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: var(--phoneshop-black);
+  transition: color 0.2s;
+}
+
+.icon-btn:hover {
+  color: var(--phoneshop-blue);
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--phoneshop-black);
+  transition: all 0.3s;
+}
+
+@media (max-width: 992px) {
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: var(--phoneshop-white);
+    padding: 20px;
+    border-bottom: 1px solid var(--phoneshop-border);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .main-nav.open {
+    display: block;
+  }
+  
+  .main-nav ul {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .main-nav li {
+    border-bottom: 1px solid var(--phoneshop-border);
+  }
+  
+  .main-nav a {
+    display: block;
+    padding: 15px 0;
+  }
+  
+  .menu-toggle {
+    display: flex;
+  }
+}

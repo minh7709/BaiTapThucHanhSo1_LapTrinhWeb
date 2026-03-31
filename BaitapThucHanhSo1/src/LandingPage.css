@@ -1,0 +1,645 @@
+/* PhoneShop Landing Page CSS */
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --phoneshop-black: #000000;
+  --phoneshop-white: #ffffff;
+  --phoneshop-blue: #1428a0;
+  --phoneshop-gray: #f4f4f4;
+  --phoneshop-dark-gray: #555555;
+  --phoneshop-light-gray: #767676;
+  --phoneshop-border: #e5e5e5;
+  --font-primary: 'SamsungOne', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  color: var(--phoneshop-black);
+  background: var(--phoneshop-white);
+}
+
+.phoneshop-landing {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Hero Section */
+.hero-section {
+  margin-top: 56px;
+  position: relative;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-slide {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 80px 48px;
+  gap: 60px;
+}
+
+.hero-content {
+  flex: 1;
+  color: var(--phoneshop-white);
+  max-width: 600px;
+}
+
+.hero-tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+  backdrop-filter: blur(10px);
+}
+
+.hero-section h1 {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #fff 0%, #a8d8ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: 24px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  opacity: 0.95;
+}
+
+.hero-desc {
+  font-size: 16px;
+  line-height: 1.7;
+  opacity: 0.8;
+  margin-bottom: 32px;
+  max-width: 480px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.phone-mockup {
+  width: 280px;
+  height: 560px;
+  background: linear-gradient(145deg, #2a2a3e 0%, #1a1a2e 100%);
+  border-radius: 40px;
+  padding: 12px;
+  box-shadow: 
+    0 50px 100px rgba(0, 0, 0, 0.5),
+    0 0 0 2px rgba(255, 255, 255, 0.1),
+    inset 0 0 20px rgba(255, 255, 255, 0.05);
+  position: relative;
+}
+
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.phone-screen::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 30px;
+  background: #1a1a2e;
+  border-radius: 0 0 20px 20px;
+}
+
+.phone-text {
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  letter-spacing: 2px;
+}
+
+.hero-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding-bottom: 40px;
+}
+
+.indicator {
+  width: 40px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.indicator.active {
+  background: var(--phoneshop-white);
+  width: 60px;
+}
+
+/* Featured Products Section */
+.featured-section {
+  padding: 80px 0;
+  background: var(--phoneshop-white);
+}
+
+.section-title {
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 48px;
+  color: var(--phoneshop-black);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.product-card {
+  background: var(--phoneshop-gray);
+  border-radius: 20px;
+  padding: 32px 24px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+}
+
+.product-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: var(--phoneshop-blue);
+  color: var(--phoneshop-white);
+  padding: 6px 14px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.product-badge.hot {
+  background: #ff4444;
+}
+
+.product-image {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+/* Product Visual Icons */
+.phone-visual {
+  width: 80px;
+  height: 160px;
+  background: linear-gradient(145deg, #333 0%, #111 100%);
+  border-radius: 16px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.phone-visual::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 140px;
+  background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+  border-radius: 10px;
+}
+
+.phone-visual.samsung::after {
+  background: linear-gradient(180deg, #1428a0 0%, #0d1a4a 100%);
+}
+
+.phone-visual.xiaomi::after {
+  background: linear-gradient(180deg, #ff6900 0%, #cc5200 100%);
+}
+
+.buds-visual {
+  width: 100px;
+  height: 80px;
+  position: relative;
+}
+
+.buds-visual::before,
+.buds-visual::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 35px;
+  height: 45px;
+  background: linear-gradient(145deg, #f8f8f8 0%, #ddd 100%);
+  border-radius: 50% 50% 40% 40%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.buds-visual::before {
+  left: 10px;
+}
+
+.buds-visual::after {
+  right: 10px;
+}
+
+.product-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--phoneshop-black);
+}
+
+.product-desc {
+  font-size: 14px;
+  color: var(--phoneshop-light-gray);
+  margin-bottom: 12px;
+}
+
+.product-price {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--phoneshop-blue);
+  margin-bottom: 20px;
+}
+
+/* Banner Section */
+.banner-section {
+  padding: 40px 24px;
+  background: var(--phoneshop-white);
+}
+
+.banner-grid {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
+}
+
+.banner-item {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  min-height: 280px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.banner-large {
+  grid-row: span 2;
+  min-height: 580px;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+  padding: 40px;
+  color: var(--phoneshop-white);
+}
+
+.banner-tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.banner-item h3 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.banner-item p {
+  font-size: 15px;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+.banner-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.gradient-blue {
+  background: linear-gradient(135deg, #1e3a5f 0%, #0d2137 50%, #1a4b7a 100%);
+}
+
+.gradient-purple {
+  background: linear-gradient(135deg, #4a2c7a 0%, #2d1b4e 50%, #6b3fa0 100%);
+}
+
+.gradient-green {
+  background: linear-gradient(135deg, #1a4d3e 0%, #0d2921 50%, #2a7d5f 100%);
+}
+
+.link-arrow {
+  color: var(--phoneshop-white);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  transition: transform 0.3s;
+  display: inline-block;
+}
+
+.link-arrow:hover {
+  transform: translateX(5px);
+}
+
+/* Offers Section */
+.offers-section {
+  padding: 80px 0;
+  background: var(--phoneshop-gray);
+}
+
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.offer-card {
+  background: var(--phoneshop-white);
+  border-radius: 20px;
+  padding: 40px 24px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.offer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.offer-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.offer-card h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--phoneshop-black);
+}
+
+.offer-card p {
+  font-size: 14px;
+  color: var(--phoneshop-light-gray);
+}
+
+/* Services Section */
+.services-section {
+  padding: 80px 0;
+  background: var(--phoneshop-white);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.service-card {
+  background: var(--phoneshop-gray);
+  border-radius: 20px;
+  padding: 40px 24px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--phoneshop-black);
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  background: var(--phoneshop-blue);
+  color: var(--phoneshop-white);
+  transform: translateY(-5px);
+}
+
+.service-card:hover .service-icon {
+  color: var(--phoneshop-white);
+}
+
+.service-icon {
+  color: var(--phoneshop-blue);
+  margin-bottom: 20px;
+  transition: color 0.3s;
+}
+
+.service-card h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.service-card p {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* Newsletter Section */
+.newsletter-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--phoneshop-blue) 0%, #0d1a4a 100%);
+}
+
+.newsletter-content {
+  text-align: center;
+  color: var(--phoneshop-white);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.newsletter-content h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.newsletter-content p {
+  font-size: 16px;
+  opacity: 0.9;
+  margin-bottom: 32px;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.newsletter-form input {
+  flex: 1;
+  max-width: 400px;
+  padding: 16px 24px;
+  border: none;
+  border-radius: 28px;
+  font-size: 15px;
+  outline: none;
+}
+
+.newsletter-form input::placeholder {
+  color: var(--phoneshop-light-gray);
+}
+
+.newsletter-form .btn-primary {
+  flex-shrink: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .hero-section h1 {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-slide {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 24px;
+  }
+  
+  .hero-content {
+    max-width: 100%;
+  }
+  
+  .hero-desc {
+    max-width: 100%;
+  }
+  
+  .hero-buttons {
+    justify-content: center;
+  }
+  
+  .banner-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .banner-large {
+    grid-row: span 1;
+    min-height: 320px;
+  }
+  
+  .offers-grid,
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 36px;
+  }
+  
+  .hero-subtitle {
+    font-size: 18px;
+  }
+  
+  .phone-mockup {
+    width: 200px;
+    height: 400px;
+  }
+  
+  .section-title {
+    font-size: 28px;
+  }
+  
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .newsletter-form {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+  
+  .newsletter-form input {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section {
+    min-height: 500px;
+  }
+  
+  .hero-section h1 {
+    font-size: 28px;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .offers-grid,
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}

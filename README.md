@@ -1,6 +1,6 @@
 # BaiTapThucHanhSo1_LapTrinhWeb_N23DCCN106
+<video src="BaitapThucHanhSo1/src/assets/file.mp4" width="100%" controls autoplay loop muted></video>
 ## 📋 Yêu cầu hệ thống
-
 Trước khi bắt đầu, hãy đảm bảo máy tính của bạn đã cài đặt:
 - **Node.js**: Phiên bản 18.0 trở lên (Khuyến nghị bản LTS).
 - **npm** (thường đi kèm với Node.js).

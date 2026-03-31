@@ -1,0 +1,64 @@
+/* Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  border-radius: 28px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--phoneshop-white);
+  color: var(--phoneshop-black);
+}
+
+.btn-primary:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--phoneshop-white);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.btn-secondary:hover {
+  border-color: var(--phoneshop-white);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--phoneshop-black);
+  border: 2px solid var(--phoneshop-black);
+  padding: 12px 28px;
+}
+
+.btn-outline:hover {
+  background: var(--phoneshop-black);
+  color: var(--phoneshop-white);
+}
+
+.btn-white {
+  background: var(--phoneshop-white);
+  color: var(--phoneshop-black);
+}
+
+.btn-white:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 576px) {
+  .btn {
+    width: 100%;
+  }
+}

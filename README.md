@@ -1,4 +1,4 @@
-# BaiTapThucHanhSo1_LapTrinhWeb_N23DCCN106
+# BaiTapThucHanhSo1+2_LapTrinhWeb_N23DCCN106
 ![Demo](BaitapThucHanhSo1/src/assets/myGif.gif)
 ## 📋 Yêu cầu hệ thống
 Trước khi bắt đầu, hãy đảm bảo máy tính của bạn đã cài đặt:

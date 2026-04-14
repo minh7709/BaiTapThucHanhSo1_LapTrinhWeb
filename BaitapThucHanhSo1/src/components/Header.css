@@ -51,6 +51,11 @@
   color: var(--phoneshop-blue);
 }
 
+.main-nav a.active {
+  color: var(--phoneshop-blue);
+  border-bottom: 2px solid var(--phoneshop-blue);
+}
+
 .header-actions {
   display: flex;
   align-items: center;

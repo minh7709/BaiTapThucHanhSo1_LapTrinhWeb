@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 import './Header.css'
 
 function Header() {
@@ -8,19 +9,40 @@ function Header() {
     <header className="header">
       <div className="header-container">
         <div className="logo">
-          <a href="#">
+          <NavLink to="/" onClick={() => setMenuOpen(false)}>
             <span className="phoneshop-logo">PhoneShop</span>
-          </a>
+          </NavLink>
         </div>
         
         <nav className={`main-nav ${menuOpen ? 'open' : ''}`}>
           <ul>
-            <li><a href="#">iPhone</a></li>
-            <li><a href="#">Samsung</a></li>
-            <li><a href="#">Xiaomi</a></li>
-            <li><a href="#">OPPO</a></li>
-            <li><a href="#">Phụ kiện</a></li>
-            <li><a href="#">Khuyến mãi</a></li>
+            <li>
+              <NavLink
+                to="/"
+                className={({ isActive }) => (isActive ? 'active' : '')}
+                onClick={() => setMenuOpen(false)}
+              >
+                Trang chủ
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/about-us"
+                className={({ isActive }) => (isActive ? 'active' : '')}
+                onClick={() => setMenuOpen(false)}
+              >
+                Giới thiệu
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/contact"
+                className={({ isActive }) => (isActive ? 'active' : '')}
+                onClick={() => setMenuOpen(false)}
+              >
+                Liên hệ
+              </NavLink>
+            </li>
           </ul>
         </nav>
 

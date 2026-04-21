@@ -1,9 +1,32 @@
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Button from './components/Button'
+import ProductCard from './components/ProductCard'
 import './LandingPage.css'
 
 function LandingPage() {
+  const [products, setProducts] = useState([])
+  const [loadingProducts, setLoadingProducts] = useState(true)
+  const [productsError, setProductsError] = useState('')
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const apiBaseUrl = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000/api'
+        const response = await axios.get(`${apiBaseUrl}/products`)
+        setProducts(Array.isArray(response.data) ? response.data : [])
+      } catch (error) {
+        setProductsError('Khong the tai danh sach san pham. Vui long thu lai sau.')
+      } finally {
+        setLoadingProducts(false)
+      }
+    }
+
+    fetchProducts()
+  }, [])
+
   return (
     <div className="phoneshop-landing">
       <Header />
@@ -43,44 +66,14 @@ function LandingPage() {
         <div className="container">
           <h2 className="section-title">Sản phẩm nổi bật</h2>
           <div className="product-grid">
-            <div className="product-card">
-              <div className="product-badge">Mới</div>
-              <div className="product-image phone-icon">
-                <div className="phone-visual"></div>
-              </div>
-              <h3>iPhone 16 Series</h3>
-              <p className="product-desc">Chip A18 - Hiệu năng đỉnh cao</p>
-              <p className="product-price">Từ 24.990.000₫</p>
-              <Button variant="outline" href="#">Xem chi tiết</Button>
-            </div>
-            <div className="product-card">
-              <div className="product-badge hot">Hot</div>
-              <div className="product-image phone-icon">
-                <div className="phone-visual samsung"></div>
-              </div>
-              <h3>Samsung Galaxy S24</h3>
-              <p className="product-desc">Galaxy AI - Trợ lý thông minh</p>
-              <p className="product-price">Từ 22.990.000₫</p>
-              <Button variant="outline" href="#">Xem chi tiết</Button>
-            </div>
-            <div className="product-card">
-              <div className="product-image phone-icon">
-                <div className="phone-visual xiaomi"></div>
-              </div>
-              <h3>Xiaomi 14 Ultra</h3>
-              <p className="product-desc">Camera Leica chuyên nghiệp</p>
-              <p className="product-price">Từ 19.990.000₫</p>
-              <Button variant="outline" href="#">Xem chi tiết</Button>
-            </div>
-            <div className="product-card">
-              <div className="product-image buds-icon">
-                <div className="buds-visual"></div>
-              </div>
-              <h3>AirPods Pro 2</h3>
-              <p className="product-desc">Âm thanh đỉnh cao</p>
-              <p className="product-price">Từ 5.990.000₫</p>
-              <Button variant="outline" href="#">Xem chi tiết</Button>
-            </div>
+            {loadingProducts && <p className="products-message">Dang tai san pham...</p>}
+            {productsError && <p className="products-message products-error">{productsError}</p>}
+            {!loadingProducts && !productsError && products.length === 0 && (
+              <p className="products-message">Chua co san pham nao.</p>
+            )}
+            {!loadingProducts && !productsError && products.map((product, index) => (
+              <ProductCard key={product.id || `${product.name}-${index}`} product={product} index={index} />
+            ))}
           </div>
         </div>
       </section>
